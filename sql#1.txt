@@ -1,0 +1,51 @@
+123.46
+
+decimal(18,2)
+
+
+
+Test - saved in both - varchar & nvarchar
+
+
+DDL - Data Defination Lang - create, alter, drop, truncate
+DML - Data Manupolation Lang - insert, update, delete
+
+Primary Key - only one
+
+more than one primary we can create in one table - composite key
+
+why we need PK?
+NULL should not be allowed
+it should be unique
+it can not be modified
+
+Forign Key - relation between two table
+- provide a mechanism for linking a data store in multiple table and retrieving them in efficient manner.
+- FK - NULL should be accept
+
+Unique key - all data should be unique and null valcue consider only one time of column constraint is allow null
+
+PK VS UK:
+NULL should not allowed   -> NULL only one time we can insert
+can't modified     ->  can modified
+
+Identity  - applied in column level in perticular table
+Seed & Increment
+Seed - Starting value of a column
+Increment - Increment value from default value
+
+INSERT INTO Employees(
+Name
+,PhoneNumber
+,Address
+,Email
+,Grade
+,IsActive
+) VALUES(
+'qa4'
+,'6363636363'
+,'home qa 4'
+,'qa4@gmail.com'
+,'A'
+,0
+)

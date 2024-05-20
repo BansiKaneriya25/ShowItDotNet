@@ -1,0 +1,130 @@
+Sequence - is a database obj thata generates a seq of unique numeric value.
+we can use into multiple table
+
+CREATE SEQUENCE EmpSeq
+START WITH 1
+INCREMENT BY 1;
+
+
+INSERT INTO Employees (Name
+,PhoneNumber
+,Address
+,Email
+,Grade
+,IsActive
+,EmpSeq) VALUES ('QA6','121246432',NULL,'qa6@gmail.com','A',1, NEXT VALUE FOR EmpSeq)
+
+Select Statement - select statement used to return records in form of result set from one or more then one tables or view.
+
+select * from [dbo].[Employees]
+
+select DISTINCT Name from [dbo].[Employees]
+
+select EmployeeId, Name from [dbo].[Employees]
+
+select Top 3 from [dbo].[Employees]
+
+
+Assignment Operator
++=
+-=
+*=
+/=
+%=
+
+DECLARE @MyVariable INT;
+
+SET @MyVariable = 10
+
+SET @MyVariable += 5
+
+SELECT @MyVariable
+
+INSERT INTO Employees (Name
+,PhoneNumber
+,Address
+,Email
+,Grade
+,IsActive
+,EmpSeq) VALUES ('QA8','1231246432',NULL,'qa6@gmail.com','A',1, @MyVariable)
+
+Update Employees SET EmpSeq = @MyVariable WHERE EmployeeId = 1
+
+Arithmetic Operator
++
+-
+*
+/
+%
+
+SELECT 10+2
+
+INSERT INTO Employees (Name
+,PhoneNumber
+,Address
+,Email
+,Grade
+,IsActive
+,EmpSeq) VALUES ('QA9','85478512',NULL,'qa8@gmail.com','A',1, 25/2)
+
+Update Employees SET EmpSeq = 10+2 WHERE EmployeeId = 1
+
+Comparison Operator
+>
+>=
+<
+=<
+!<
+!>
+
+
+Logical Operator
+AND - boolen exp
+OR - boolen exp
+NOT - 
+
+select * from [dbo].[Employees] WHERE Address IS NOT NULL AND IsActive = 1 AND NOT Name = 'ABC'
+ 
+Like Operation - Using % - wildcard
+ 
+select * from [dbo].[Employees]  WHERE Email LIKE 'qa%'
+	 
+
+select * from [dbo].[Employees]  WHERE PhoneNumber LIKE '%12%'
+
+
+select * from [dbo].[Employees]  WHERE PhoneNumber LIKE '%12'
+
+Between Operator
+select * from [dbo].[Employees] WHERE EmployeeId BETWEEN 2 AND 5
+
+Top Clause
+--2nd Highest salary
+SELECT TOP 1 * FROM (
+SELECT TOP 2 * from EmployeeDetails Order By Salary DESC
+) AS AAAAAA ORDER BY Salary ASC
+
+GROUP BY & Having Clause
+Select Department, COUNT(Department) FROM EmployeeDetails
+--WHERE Department = 'CE'
+GROUP BY Department
+HAVING COUNT(Department) > 2  
+
+
+SELECT COUNT(1) FROM EmployeeDetails
+
+
+Diff betn Where and Having Clause
+- WHERE clause cann't use aggregate func
+- Having Clause can use with aggregate func
+- WHERE come before GROUP BY
+- HAVING come after GROUP BY
+- Both we can use in select query
+- WHERE we can use in select, update statement
+- HAVING - we can use in only select statement
+
+
+
+WHERE -> ORDER BY
+
+WHERE -> GROUP BY -> HAVING

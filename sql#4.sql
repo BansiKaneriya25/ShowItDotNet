@@ -236,3 +236,16 @@ SELECT ROW_NUMBER() OVER(order by EmployeeDetails.Salary) as rn,
 * FROM EmployeeDetails WHERE Department = 'IT') as t
 where dense_rank = 3
 
+--diff betw drop, delete and truncate (imp)
+
+--truncate 
+-- delete all the records from table and reset identity
+-- no where condition
+
+-- drop
+-- physical table will be deleted
+
+-- delete
+-- delete perticular records from table
+-- where condition we can apply
+-- if we don't add where condition then all records deleted but identity can't reset
